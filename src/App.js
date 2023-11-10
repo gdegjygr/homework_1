@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react"
 
-function App() {
+
+// export default function MyApp() {
+//   const[count, setCount] = useState(0)
+
+//   function handleClick(){
+//     setCount(count + 1)
+//   }
+
+//   return (
+//     <div>
+//       <h1>ARASAKA</h1>
+//       <MyButton count = {count} onClick = {handleClick}/>
+//       <MyButton count = {count} onClick = {handleClick}/>
+//     </div>
+//   )
+// };
+
+
+// function MyButton({count, onClick}){
+//   return (
+//     <button onClick = {onClick}>
+//       You have {count} clicks!
+//     </button>
+//   )
+// }
+
+
+export default function MyApp(){
+  const[count, setCount] = useState(0)
+
+  function handleClick(){
+    setCount(count + 1 * 2)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+      <h2>ARASAKA</h2>
+      <MyButton count = {count} onClick = {handleClick}/>
+      <MyButton count = {count} onClick = {handleClick}/>
+    </div> 
+  )
 }
 
-export default App;
+
+function MyButton({count, onClick}) {
+  return <button onClick={onClick}>You have {count} clicks!</button>
+}
